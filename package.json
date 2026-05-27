@@ -1,15 +1,16 @@
 {
-	"name": "@jazz-man/trim-php",
-	"module": "src/index.ts",
-	"type": "module",
 	"devDependencies": {
 		"@types/bun": "1.3.14"
-	},
-	"peerDependencies": {
-		"typescript": "^5"
 	},
 	"engines": {
 		"bun": ">=1.3.0",
 		"node": ">=22"
-	}
+	},
+	"module": "src/index.ts",
+	"name": "@jazz-man/trim-php",
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"type": "module",
+	"version": "0.0.0"
 }
