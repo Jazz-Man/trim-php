@@ -9,7 +9,7 @@ export default class TrimPhp {
 	 */
 	lTrim(str: string, charList?: string): string {
 		let chars = !charList ? " \\s\u00A0" : `${charList}`;
-		chars = chars.replace(/([[\]().?/*{}+$^:])/g, "$1");
+		chars = chars.replace(/[\\[\]().?/*{}+$^:]/g, "\\$&");
 
 		const regex = new RegExp(`^[${chars}]+`, "g");
 
@@ -26,7 +26,7 @@ export default class TrimPhp {
 	 */
 	rTrim(str: string, charList?: string): string {
 		let chars = !charList ? " \\s\u00A0" : `${charList}`;
-		chars = chars.replace(/([[\]().?/*{}+$^:])/g, "\\$1");
+		chars = chars.replace(/[\\[\]().?/*{}+$^:]/g, "\\$&");
 
 		const regex = new RegExp(`[${chars}]+$`, "g");
 
@@ -74,7 +74,7 @@ export default class TrimPhp {
 
 		let trimmedStr = `${str}`;
 		if (charList) {
-			whitespace = `${charList}`.replace(/([[\]().?/*{}+$^:])/g, "$1");
+			whitespace = `${charList}`.replace(/[\\[\]().?/*{}+$^:]/g, "\\$&");
 		}
 
 		l = trimmedStr.length;
